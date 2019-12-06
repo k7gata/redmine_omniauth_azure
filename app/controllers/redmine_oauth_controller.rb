@@ -52,7 +52,7 @@ class RedmineOauthController < AccountController
                .first_or_initialize
     if user.new_record?
       # Self-registration off
-      redirect_to(home_url) && return unless Setting.self_registration?
+      redirect_to(home_url) && return if Setting.plugin_redmine_omniauth_azure['azure_self_registration'].to_i.zero?
       # Create on the fly
       case Setting.user_format
       when :lastname_firstname,:lastnamefirstname,:lastname_comma_firstname,:lastname
@@ -69,7 +69,7 @@ class RedmineOauthController < AccountController
       user.random_password
       user.register
 
-      case Setting.self_registration
+      case Setting.plugin_redmine_omniauth_azure['azure_self_registration']
       when '1'
         register_by_email_activation(user) do
           onthefly_creation_failed(user)

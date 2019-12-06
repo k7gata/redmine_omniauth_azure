@@ -9,4 +9,5 @@ ja:
   client_secret: "クライアントシークレット"
   tenant_id: "テナントID"
   allowed_domains: "認証を許可するドメイン"
+  azure_self_registration: "Azure情報によるアカウント登録"
   azure_oauth_authentication: "プラグインの有効化"

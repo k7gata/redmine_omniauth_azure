@@ -8,4 +8,5 @@ en:
   client_secret: "Client Secret"
   tenant_id: "Tenant ID"
   allowed_domains: "Available domains"
+  azure_self_registration: "Self-registration by Azure"
   azure_oauth_authentication: "Oauth authentication"

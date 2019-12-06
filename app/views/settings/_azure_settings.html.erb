@@ -15,6 +15,13 @@
   <%= text_area_tag "settings[allowed_domains]", @settings['allowed_domains'], :rows => 5 %>
 </p>
 <p>
+  <label><%= l(:azure_self_registration) %>:</label>
+  <%= select_tag "settings[azure_self_registration]",
+    options_for_select(
+      [[l(:label_disabled), "0"], [l(:label_registration_manual_activation), "2"], [l(:label_registration_automatic_activation), "3"]],
+      @settings['azure_self_registration']) %>
+</p>
+<p>
   <label><%= l(:azure_oauth_authentication) %>:</label>
   <%= check_box_tag "settings[azure_oauth_authentication]", true, @settings['azure_oauth_authentication'] %>
 </p>
